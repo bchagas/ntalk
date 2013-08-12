@@ -1,0 +1,14 @@
+doctype html
+html
+  include ../shared/head
+  body
+    header.row
+      h1 Ntalk
+
+    section.row
+      form(action="/login", method="post")
+        input(type="text", name="name", placeholder="Digite o nome")
+        input(type="text", name="email", placeholder="Digite o e-mail")
+        button(type="submit") Entrar
+
+    include ../shared/footer

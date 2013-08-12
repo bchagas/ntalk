@@ -1,0 +1,26 @@
+doctype html
+html
+  include ../shared/head
+  body
+    header.row
+      h1 Ntalk - Agenda de contatos.
+      include ../shared/logout
+
+    section.row
+      table
+        thead
+          tr
+            th Name
+            th E-mail
+            th Action
+        tbody
+          - contacts.forEach(function(contact, index) {
+            tr
+              td #{ contact.name }
+              td #{ contact.email }
+              td
+                a(href='/contact/#{index}') Ver detalhes
+                a(href='/chat/#{contact.email}') Ver detalhes
+          - })
+
+    include ../shared/footer

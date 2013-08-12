@@ -1,0 +1,11 @@
+{
+  "name": "ntalk",
+  "description": "Node talk - Agenda de contatos",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "3.3.4",
+    "express-load": "1.1.7",
+    "ejs": "*",
+    "socket.io": "0.9.14"
+  }
+}

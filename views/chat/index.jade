@@ -1,0 +1,24 @@
+doctype html
+html
+  include ../shared/head
+  body
+    header.row
+      h1 Ntalk chat
+
+    section.row
+      pre(id="chat")
+        input(type="hidden", id="nome", value="#{ usuario.nome }")
+      input(type="text", id="msg", placeholder="Digite sua mensagem")
+      button(onclick="enviar();") Enviar
+
+    include ../shared/footer
+    script(type='text/javascript')
+      var socket = io.connect('http://localhost:3000');
+      socket.on('toClient', function (msg) {
+        document.getElementById('chat').innerHTML += msg;
+      });
+      var enviar = function() {
+        var nome = document.getElementById('nome').value;
+        var msg = document.getElementById('msg').value;
+        socket.emit('toServer', {nome: nome, msg: msg});
+      };

@@ -1,0 +1,16 @@
+doctype html
+html
+  include ../shared/head
+  body
+    header.row
+      h1 Ntalk - Agenda de contatos.
+
+    section
+      form(action='contacts/#{id}', method='post')
+        input(type='hidde', name='_method', value='put')
+        label Name:
+        input(type='text', name='contact[name]', value=contact.name)
+        button(type='submit') Atualizar
+
+    include ../shared/logout
+    include ../shared/footer
